@@ -1,0 +1,27 @@
+/*--------------------------------------------------------------
+# Places the image for the main page
+--------------------------------------------------------------*/
+.hero-image {
+    /*--------------------------------------------------------------
+   # Linear gradient works greatly to make hero text readable
+   # Position and center the image to scale nicely on all screens
+   --------------------------------------------------------------*/
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/hero-bg.jpg");
+     height: 70vh;
+     background-position: initial;
+     background-repeat: no-repeat;
+     background-size: cover;
+   }
+    /*--------------------------------------------------------------
+   # translate places the hero text in the middle of the hero image
+   --------------------------------------------------------------*/
+   .hero-text {
+     text-align: center;
+     position: relative;
+     top: 40%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     color: $light-primary-color;
+   }
+   
+   

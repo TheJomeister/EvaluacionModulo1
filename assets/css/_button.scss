@@ -1,0 +1,38 @@
+.button {
+    border: none; /* Remove borders */
+    color: $light-primary-color; /* White text */
+    padding: 0px 16px; /* Some padding */
+    cursor: pointer; /* Mouse pointer on hover */
+    text-decoration: none;
+  }
+
+  .media-button{
+    background-color: $text-icons;
+    border: none; /* Remove borders */
+    color: $light-primary-color;
+    padding: 1px 16px 0px 0px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+
+    .media-button:hover{
+    color:  #f18805;
+  }
+
+    .button:hover {
+    box-shadow: inset 0px -80px 0px 0px #f18805;
+  }
+
+  .card-button{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: $light-primary-color;
+    background-color: $accent-colors;
+    padding: 0.5em 1.25em;
+    border-radius: 0.25em;
+  }
+
+    .card-button:hover{
+    box-shadow: inset 0px -90px 60px 0px $dark-primary-color;
+  }

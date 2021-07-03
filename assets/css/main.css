@@ -1,0 +1,417 @@
+@charset "UTF-8";
+/**
+* Template Name: Sunna 2.0_Evaluacion
+* Author: jomeister.io
+* Sesión: 08
+*/
+/*--------------------------------------------------------------
+# Imported variables
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Declares variables to be used in the project
+--------------------------------------------------------------*/
+:root {
+  font-size: 16px;
+  --transition-speed: 600ms;
+}
+
+/*--------------------------------------------------------------
+# Places the image for the main page
+--------------------------------------------------------------*/
+.hero-image {
+  /*--------------------------------------------------------------
+  # Linear gradient works greatly to make hero text readable
+  # Position and center the image to scale nicely on all screens
+  --------------------------------------------------------------*/
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/hero-bg.jpg");
+  height: 70vh;
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*--------------------------------------------------------------
+# translate places the hero text in the middle of the hero image
+--------------------------------------------------------------*/
+.hero-text {
+  text-align: center;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# Design for the cards
+--------------------------------------------------------------*/
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px 20px;
+  grid-template-areas: ". ." ". .";
+  justify-items: center;
+  padding-top: 2rem;
+}
+.card-container .cards {
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 30ch;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 500ms ease;
+}
+.card-container .card_1 {
+  background-image: url("../img/Proyectos/Bimbo Mazatlan.jpg");
+}
+.card-container .card_2 {
+  background-image: url("../img/Proyectos/Chedraui San José del Cabo.JPG");
+}
+.card-container .card_3 {
+  background-image: url("../img/Proyectos/Chedraui Palacio.JPG");
+}
+.card-container .card_4 {
+  background-image: url("../img/Proyectos/Chedraui Colima.JPG");
+}
+
+.card-content {
+  padding: 1.5rem;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+}
+
+.card-title {
+  position: relative;
+  width: max-content;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #f18805;
+  transform: scaleX(0);
+  transition: transform 500ms ease;
+}
+
+.card_1:hover {
+  transform: scale(1.05);
+}
+.card_1:hover .card-title::after {
+  transform: scaleX(1);
+}
+
+.card_2:hover {
+  transform: scale(1.05);
+}
+.card_2:hover .card-title::after {
+  transform: scaleX(1);
+}
+
+.card_3:hover {
+  transform: scale(1.05);
+}
+.card_3:hover .card-title::after {
+  transform: scaleX(1);
+}
+
+.card_4:hover {
+  transform: scale(1.05);
+}
+.card_4:hover .card-title::after {
+  transform: scaleX(1);
+}
+
+.navbar {
+  width: 40rem;
+  height: 900vh;
+  position: fixed;
+  background-color: #001427;
+  transition: width 400ms ease;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: #5a5d6c;
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: #f18805;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.navbar:hover {
+  width: 16rem;
+}
+
+.navbar:hover .link-text {
+  display: block;
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: var(--transition-speed);
+}
+
+.logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+  transform: rotate(-180deg);
+}
+
+.fa-primary {
+  color: #ff7eee;
+}
+
+.fa-secondary {
+  color: #df49a6;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 5rem;
+    height: 94vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+  }
+
+  .navbar:hover .logo svg {
+    margin-left: 11rem;
+  }
+
+  .navbar:hover .logo-text {
+    left: 0px;
+  }
+}
+.dark {
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+.light {
+  --text-primary: #1f1f1f;
+  --text-secondary: #000000;
+  --bg-primary: #ffffff;
+  --bg-secondary: #e4e4e4;
+}
+
+.solar {
+  --text-primary: #576e75;
+  --text-secondary: #35535c;
+  --bg-primary: #fdf6e3;
+  --bg-secondary: #f5e5b8;
+}
+
+.theme-icon {
+  display: none;
+}
+
+.dark #darkIcon {
+  display: block;
+}
+
+.light #lightIcon {
+  display: block;
+}
+
+.solar #solarIcon {
+  display: block;
+}
+
+header {
+  background: #5a5d6c;
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 0px 3px 0px;
+  position: fixed;
+  top: 0;
+  z-index: 4;
+}
+
+.nav-section {
+  background: #001427;
+  font-size: 18px;
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 4;
+  top: 2rem;
+}
+
+.button {
+  border: none;
+  /* Remove borders */
+  color: white;
+  /* White text */
+  padding: 0px 16px;
+  /* Some padding */
+  cursor: pointer;
+  /* Mouse pointer on hover */
+  text-decoration: none;
+}
+
+.media-button {
+  background-color: #5a5d6c;
+  border: none;
+  /* Remove borders */
+  color: white;
+  padding: 1px 16px 0px 0px;
+  /* Some padding */
+  font-size: 16px;
+  /* Set a font size */
+  cursor: pointer;
+  /* Mouse pointer on hover */
+}
+
+.media-button:hover {
+  color: #f18805;
+}
+
+.button:hover {
+  box-shadow: inset 0px -80px 0px 0px #f18805;
+}
+
+.card-button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #f18805;
+  padding: 0.5em 1.25em;
+  border-radius: 0.25em;
+}
+
+.card-button:hover {
+  box-shadow: inset 0px -90px 60px 0px #001427;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  color: #001427;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #001427;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #f18805;
+}
+
+main {
+  margin-left: 5rem;
+  padding: 4rem;
+}
+
+/*# sourceMappingURL=main.css.map */

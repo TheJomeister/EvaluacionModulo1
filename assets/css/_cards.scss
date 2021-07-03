@@ -1,0 +1,86 @@
+/*--------------------------------------------------------------
+# Design for the cards
+--------------------------------------------------------------*/
+
+
+.card-container{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 20px 20px; 
+    grid-template-areas: 
+      ". ."
+      ". ."; 
+    justify-items: center;
+    padding-top: 2rem;
+    .cards{
+        
+        background-size: cover;
+        padding: 10rem 0 0;
+        max-width: 30ch;
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: transform 500ms ease;}
+        .card_1{
+        background-image: url("../img/Proyectos/Bimbo\ Mazatlan.jpg");}
+        .card_2{
+        background-image: url("../img/Proyectos/Chedraui\ San\ José\ del\ Cabo.JPG");}
+        .card_3{
+        background-image: url("../img/Proyectos/Chedraui\ Palacio.JPG");}
+        .card_4{
+        background-image: url("../img/Proyectos/Chedraui\ Colima.JPG");}
+    
+}
+
+.card-content{
+    padding: 1.5rem;
+    text-decoration: none;
+    color: $light-primary-color;
+    background: linear-gradient(
+      hsl(10 0% 0% /0),
+      hsl(20 0% 0% /0.7),
+      hsl(0 0% 0% /0.8)
+    );
+  }
+  .card-title {
+    position: relative;
+    width: max-content;
+  }
+
+  .card-title::after{
+    content:"";
+    position:absolute;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: $accent-colors;
+    transform: scaleX(0);
+    transition: transform 500ms ease;
+  }
+  
+  .card_1:hover{
+    transform: scale(1.05);
+    .card-title::after{
+    transform: scaleX(1);
+        }
+    }
+  .card_2:hover{
+    transform: scale(1.05);
+    .card-title::after{
+    transform: scaleX(1);
+        }   
+    }
+  .card_3:hover{
+    transform: scale(1.05);
+    .card-title::after{
+    transform: scaleX(1);
+    }
+  }
+  .card_4:hover{
+    transform: scale(1.05);
+  .card-title::after{
+    transform: scaleX(1);
+    }
+  }

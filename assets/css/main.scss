@@ -1,0 +1,39 @@
+/**
+* Template Name: Sunna 2.0_Evaluacion
+* Author: jomeister.io
+* Sesión: 08
+*/
+/*--------------------------------------------------------------
+# Imported variables
+--------------------------------------------------------------*/
+
+@import "config";
+@import "hero";
+@import "cards";
+@import "navbar";
+@import "responsive";
+@import "header";
+@import "button";
+
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    color: $dark-primary-color;
+    background-color: $light-primary-color;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+}
+    body::-webkit-scrollbar{
+            width: 0.25rem;}
+    body::-webkit-scrollbar-track{
+            background: $dark-primary-color;}
+    body::-webkit-scrollbar-thumb{
+            background: $accent-colors;}
+
+main{
+    margin-left: 5rem;
+    padding: 4rem;
+}
