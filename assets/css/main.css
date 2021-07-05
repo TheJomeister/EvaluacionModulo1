@@ -292,6 +292,10 @@
     flex-direction: column;
     padding-bottom: 5rem;
   }
+
+  .footer-basic {
+    display: none;
+  }
 }
 /* Large screens */
 @media only screen and (min-width: 600px) {
