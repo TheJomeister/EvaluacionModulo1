@@ -1,14 +1,4 @@
-/**
-* Template Name: Sunna 2.0_Evaluacion
-* Author: jomeister.io
-* Sesión: 08
-*/
-/*--------------------------------------------------------------
-# Imported variables
---------------------------------------------------------------*/
-main{
-    padding: 4rem 4rem 0rem 4rem;
-}
+
 
 @import "config";
 @import "hero";
@@ -18,11 +8,9 @@ main{
 @import "header";
 @import "clients";
 @import "button";
+@import "footer";
 
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
     color: $dark-primary-color;
     background-color: $light-primary-color;
@@ -30,6 +18,10 @@ body {
     padding: 0;
     font-family: "Nunito", sans-serif;
 }
+
+main {
+        padding: 4rem 4rem 0rem 4rem;
+      }
     body::-webkit-scrollbar{
             width: 0.25rem;}
     body::-webkit-scrollbar-track{
