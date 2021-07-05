@@ -7,6 +7,10 @@
 /*--------------------------------------------------------------
 # Imported variables
 --------------------------------------------------------------*/
+main {
+  padding: 4rem 4rem 0rem 4rem;
+}
+
 /*--------------------------------------------------------------
 # Declares variables to be used in the project
 --------------------------------------------------------------*/
@@ -50,33 +54,54 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 20px 20px;
-  grid-template-areas: ". ." ". .";
   justify-items: center;
   padding-top: 2rem;
+  /*--------------------------------------------------------------
+  # Use of mixin to assign the same basic properties to each card.
+  --------------------------------------------------------------*/
 }
-.card-container .cards {
+.card-container .card_1 {
   background-size: cover;
   padding: 10rem 0 0;
-  max-width: 30ch;
+  max-width: 35ch;
   border-radius: 1rem;
   overflow: hidden;
   transition: transform 500ms ease;
-}
-.card-container .card_1 {
   background-image: url("../img/Proyectos/Bimbo Mazatlan.jpg");
 }
 .card-container .card_2 {
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 500ms ease;
   background-image: url("../img/Proyectos/Chedraui San José del Cabo.JPG");
 }
 .card-container .card_3 {
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 500ms ease;
   background-image: url("../img/Proyectos/Chedraui Palacio.JPG");
 }
 .card-container .card_4 {
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 500ms ease;
   background-image: url("../img/Proyectos/Chedraui Colima.JPG");
 }
 
+/*--------------------------------------------------------------
+# Use of mixin to assign the same basic properties to each card.
+--------------------------------------------------------------*/
 .card-content {
-  padding: 1.5rem;
+  padding: 0.8rem;
   text-decoration: none;
   color: white;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
@@ -127,14 +152,40 @@
   transform: scaleX(1);
 }
 
+/*--------------------------------------------------------------
+ # Declares logo variable to start hover animation
+--------------------------------------------------------------*/
+.logo {
+  content: "";
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+.logo:hover .card-title::after {
+  transform: scaleX(1);
+}
+
+/*--------------------------------------------------------------
+# Side navigation bar
+  Taken from: Fireship
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Height of 90vh to make space for the header
+  use of z-index to avoid text overlapping from other elements
+--------------------------------------------------------------*/
 .navbar {
   width: 40rem;
-  height: 900vh;
+  height: 90vh;
   position: fixed;
   background-color: #001427;
   transition: width 400ms ease;
+  z-index: 1;
 }
 
+/*--------------------------------------------------------------
+# Icon alignment 
+--------------------------------------------------------------*/
 .navbar-nav {
   list-style: none;
   padding: 0;
@@ -180,12 +231,12 @@
   margin: 0 1.5rem;
 }
 
-.navbar:hover {
-  width: 16rem;
+.fa-primary {
+  color: #86ff86;
 }
 
-.navbar:hover .link-text {
-  display: block;
+.fa-primary {
+  transition: var(--transition-speed);
 }
 
 .logo {
@@ -216,20 +267,6 @@
   transform: rotate(-180deg);
 }
 
-.fa-primary {
-  color: #ff7eee;
-}
-
-.fa-secondary {
-  color: #df49a6;
-}
-
-.fa-primary,
-.fa-secondary {
-  transition: var(--transition-speed);
-}
-
-/* Small screens */
 @media only screen and (max-width: 600px) {
   .navbar {
     bottom: 0;
@@ -250,15 +287,34 @@
   }
 
   main {
-    margin: 0;
+    margin-left: 0;
+  }
+
+  .intro {
+    background-color: #001427;
+    color: white;
+  }
+
+  .hero-image {
+    height: 24vh;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5rem;
   }
 }
 /* Large screens */
 @media only screen and (min-width: 600px) {
+  main {
+    margin-left: 4rem;
+  }
+
   .navbar {
     bottom: 0;
     width: 5rem;
-    height: 94vh;
+    height: 95vh;
   }
 
   .navbar:hover {
@@ -277,66 +333,27 @@
     left: 0px;
   }
 }
-.dark {
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
-}
-
-.light {
-  --text-primary: #1f1f1f;
-  --text-secondary: #000000;
-  --bg-primary: #ffffff;
-  --bg-secondary: #e4e4e4;
-}
-
-.solar {
-  --text-primary: #576e75;
-  --text-secondary: #35535c;
-  --bg-primary: #fdf6e3;
-  --bg-secondary: #f5e5b8;
-}
-
-.theme-icon {
-  display: none;
-}
-
-.dark #darkIcon {
-  display: block;
-}
-
-.light #lightIcon {
-  display: block;
-}
-
-.solar #solarIcon {
-  display: block;
-}
-
 header {
   background: #5a5d6c;
   font-family: "Nunito", sans-serif;
   width: 100%;
   height: 2rem;
   display: flex;
-  justify-content: flex-end;
-  padding: 8px 0px 3px 0px;
+  justify-content: space-between;
+  padding-top: 0.5rem;
   position: fixed;
   top: 0;
   z-index: 4;
 }
 
-.nav-section {
-  background: #001427;
-  font-size: 18px;
-  width: 100%;
-  height: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  z-index: 4;
-  top: 2rem;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  transform: scale(0.5);
+  grid-column-gap: 300px;
+  grid-row-gap: 40px;
 }
 
 .button {
@@ -356,12 +373,11 @@ header {
   border: none;
   /* Remove borders */
   color: white;
-  padding: 1px 16px 0px 0px;
+  padding: 0px 16px 0px 8px;
   /* Some padding */
-  font-size: 16px;
-  /* Set a font size */
   cursor: pointer;
   /* Mouse pointer on hover */
+  text-decoration: none;
 }
 
 .media-button:hover {
@@ -407,11 +423,6 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background: #f18805;
-}
-
-main {
-  margin-left: 5rem;
-  padding: 4rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,40 +1,44 @@
 /*--------------------------------------------------------------
 # Design for the cards
 --------------------------------------------------------------*/
-
-
 .card-container{
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr; 
     grid-template-rows: 1fr; 
     gap: 20px 20px; 
-    grid-template-areas: 
-      ". ."
-      ". ."; 
     justify-items: center;
     padding-top: 2rem;
-    .cards{
-        
+
+/*--------------------------------------------------------------
+# Use of mixin to assign the same basic properties to each card.
+--------------------------------------------------------------*/
+
+    @mixin cards{
         background-size: cover;
         padding: 10rem 0 0;
-        max-width: 30ch;
+        max-width: 35ch;
         border-radius: 1rem;
         overflow: hidden;
         transition: transform 500ms ease;}
+
         .card_1{
-        background-image: url("../img/Proyectos/Bimbo\ Mazatlan.jpg");}
+            @include cards; background-image: url("../img/Proyectos/Bimbo\ Mazatlan.jpg");}
         .card_2{
-        background-image: url("../img/Proyectos/Chedraui\ San\ José\ del\ Cabo.JPG");}
+            @include cards; background-image: url("../img/Proyectos/Chedraui\ San\ José\ del\ Cabo.JPG");}
         .card_3{
-        background-image: url("../img/Proyectos/Chedraui\ Palacio.JPG");}
+            @include cards; background-image: url("../img/Proyectos/Chedraui\ Palacio.JPG");}
         .card_4{
-        background-image: url("../img/Proyectos/Chedraui\ Colima.JPG");}
+            @include cards; background-image: url("../img/Proyectos/Chedraui\ Colima.JPG");}
     
 }
 
+/*--------------------------------------------------------------
+# Use of mixin to assign the same basic properties to each card.
+--------------------------------------------------------------*/
+
 .card-content{
-    padding: 1.5rem;
+    padding: 0.8rem;
     text-decoration: none;
     color: $light-primary-color;
     background: linear-gradient(
@@ -84,3 +88,19 @@
     transform: scaleX(1);
     }
   }
+
+
+ /*--------------------------------------------------------------
+ # Declares logo variable to start hover animation
+--------------------------------------------------------------*/ 
+
+.logo{
+  content: "";
+}
+
+.logo:hover{
+  transform: scale(1.05);
+  .card-title::after{
+  transform: scaleX(1);
+  }
+}

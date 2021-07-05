@@ -6,6 +6,9 @@
 /*--------------------------------------------------------------
 # Imported variables
 --------------------------------------------------------------*/
+main{
+    padding: 4rem 4rem 0rem 4rem;
+}
 
 @import "config";
 @import "hero";
@@ -13,6 +16,7 @@
 @import "navbar";
 @import "responsive";
 @import "header";
+@import "clients";
 @import "button";
 
 
@@ -33,7 +37,5 @@ body {
     body::-webkit-scrollbar-thumb{
             background: $accent-colors;}
 
-main{
-    margin-left: 5rem;
-    padding: 4rem;
-}
+
+

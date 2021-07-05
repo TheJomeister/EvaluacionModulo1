@@ -1,13 +1,22 @@
-
-
+/*--------------------------------------------------------------
+# Side navigation bar
+  Taken from: Fireship
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Height of 90vh to make space for the header
+  use of z-index to avoid text overlapping from other elements
+--------------------------------------------------------------*/
 .navbar{
     width: 40rem;
-    height: 900vh;
+    height: 90vh;
     position: fixed;
     background-color: $dark-primary-color;
     transition: width 400ms ease;
+    z-index: 1;
 }
-
+/*--------------------------------------------------------------
+# Icon alignment 
+--------------------------------------------------------------*/
 .navbar-nav{
     list-style: none;
     padding: 0;
@@ -42,7 +51,6 @@
     color: $accent-colors;
   }
   
-
 .link-text{
     display: none;
     margin-left: 1rem;
@@ -54,14 +62,14 @@
     margin: 0 1.5rem;
 }
 
-.navbar:hover{
-    width: 16rem;
-}
-
-.navbar:hover .link-text{
-    display: block;
-}
-
+.fa-primary {
+    color: $accent-colors_2;
+  }
+  
+.fa-primary {
+    transition: var(--transition-speed);
+  }
+  
 .logo {
     font-weight: bold;
     text-transform: uppercase;
@@ -92,15 +100,3 @@
   }
 
   
-  .fa-primary {
-    color: #ff7eee;
-  }
-  
-  .fa-secondary {
-    color: #df49a6;
-  }
-  
-  .fa-primary,
-  .fa-secondary {
-    transition: var(--transition-speed);
-  }
